@@ -13,7 +13,7 @@ let day = date.getDate();
 let mes = date.getMonth();
 let año = date.getFullYear();
 
-contenedor.value = day + " " + meses[mes] + " DE " + año;
+contenedor.value = day + " DE " + meses[mes] + " DE " + año;
 mes_div.textContent = meses[mes] + " " + año;
 
 
@@ -30,7 +30,7 @@ let escribirDiasDelMes = numerodedias => {
 		dia.textContent = i + 1;
         dias.appendChild(dia);
         dia.addEventListener('click', mostrarFecha  = () => {
-        contenedor.value = (i+1) + ' ' + meses[mes] + " DE "+año ;
+        contenedor.value = (i+1) + ' DE ' + meses[mes] + " DE "+año ;
         ocultar();
         });
     }   
