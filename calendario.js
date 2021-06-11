@@ -38,6 +38,7 @@ let escribirDiasDelMes = numerodedias => {
 
 let obtenerDiasDelMes = (año, mes) => new Date(año,mes+1,0).getDate();
 
+escribirDiasDelMes(obtenerDiasDelMes(año, mes));
 let MesAnterior = () =>{
     mes--;
     if(mes < 0)
