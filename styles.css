@@ -1,0 +1,46 @@
+#calendar{
+    display: none;
+}
+
+.flecha:hover{
+    background-color: aqua;    
+}
+.flecha:active{
+    background-color: rgb(17, 80, 105);    
+}
+.calendario{
+    display: none;
+    background-color: gray;
+    height: 60%;
+    width: 50%;
+}
+.mth{
+    float: left;
+    margin: 100px;
+    margin-top: 10px; 
+}
+
+.flecha{
+    
+    float: left;
+    margin-top: 10px;
+}
+.day{
+    padding: 20%;
+}
+.dias{
+    position: relative;
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+	height: 200px;
+}
+
+.day:hover{
+    
+    background-color:aqua;
+}
+.Contenedor{
+    height: 10px;
+    width: 200px;
+}
