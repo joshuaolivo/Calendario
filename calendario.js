@@ -13,40 +13,18 @@ let day = date.getDate();
 let mes = date.getMonth();
 let año = date.getFullYear();
 
-
-let selectedDate = date;
-let selectedDay = day;
-let selectedMonth = mes;
-let selectedYear = año;
-
-contenedor.value = day + "/"+meses[mes]+"/"+año;
+contenedor.value = day + " " + meses[mes] + " DE " + año;
 mes_div.textContent = meses[mes] + " " + año;
 
 
 let mostrar = () => {
     calendario.style.display = "block";
-    getMonthDays(getNumberOfDay(año, mes));
+    escribirDiasDelMes(obtenerDiasDelMes(año, mes));
 }
 
-let formatoFecha = d =>{
-	let day = d.getDate();
-	if (day < 10) {
-		day = '0' + day;
-	}
-
-	let month = d.getMonth() + 1;
-	if (month < 10) {
-		month = '0' + month;
-	}
-
-	let year = d.getFullYear();
-
-	return day + ' / ' + month + ' / ' + year;
-}
-
-let getMonthDays = numerbeofdays => {
+let escribirDiasDelMes = numerodedias => {
     dias.innerHTML = '';
-    for(let i = 0; i < numerbeofdays; i++){  
+    for(let i = 0; i < numerodedias; i++){  
         const dia = document.createElement('div');
 		dia.classList.add('day');
 		dia.textContent = i + 1;
@@ -58,9 +36,7 @@ let getMonthDays = numerbeofdays => {
     }   
 }
 
-let getNumberOfDay = (year, month) => new Date(year,month+1,0).getDate();
-
-getMonthDays(getNumberOfDay(año, mes));
+let obtenerDiasDelMes = (año, mes) => new Date(año,mes+1,0).getDate();
 
 let MesAnterior = () =>{
     mes--;
@@ -70,7 +46,7 @@ let MesAnterior = () =>{
        año --; 
     }
     mes_div.textContent = meses[mes] + " " + año;
-    getMonthDays(getNumberOfDay(año, mes));
+    escribirDiasDelMes(obtenerDiasDelMes(año, mes));
 }
 
 let SiguienteMes = () =>{
@@ -81,14 +57,12 @@ let SiguienteMes = () =>{
        año ++; 
     }
     mes_div.textContent = meses[mes] + " " + año;
-    getMonthDays(getNumberOfDay(año, mes));
+    escribirDiasDelMes(obtenerDiasDelMes(año, mes));
 }
 
 let ocultar = () => {
     calendario.style.display= "none"
 } 
-
-ocultar();
 
 antes.addEventListener('click', MesAnterior);
 siguiente.addEventListener('click', SiguienteMes);
